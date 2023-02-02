@@ -1,0 +1,354 @@
+
+--------------------------------
+
+l = int(input("Largura: "))
+c = int(input("Comprimento: "))
+h = int(input("Altura: "))
+
+volume = l * c * h
+
+print("Volume:", volume)
+
+---------------------------------
+
+N = int(input())
+l = []
+orden = []
+n = 0
+
+while N != n:
+	num = int(input())
+	l.append(num)
+	n += 1 
+	
+while l:
+	menor = l[0]
+	for x in l:
+		if x < menor:
+			menor = x
+	orden.append(menor)
+	l.remove(menor)			
+print(orden)	
+
+---------------------------------
+
+N = int(input())
+l = []
+n = 1
+cont = 0
+soma = 1
+
+while N > cont:
+	soma = 1 + soma 
+	l.append(n)
+	n = n + soma
+	cont += 1
+		
+print(l)		
+	
+
+---------------------------------
+
+n = int(input())
+soma = 0
+cont = 1
+while cont <= n:
+	soma = soma + (1/cont)
+	cont += 1 
+	
+print(soma)	
+
+---------------------------------
+
+RES = []
+flag = 99
+verif = False
+num = 0
+cont = 0
+
+while num != flag:
+	num = int(input())
+	for i in range(num):
+		 i += 1
+		 if num % i == 0:
+			  cont += 1
+	
+	if cont == 2 and num != 99:
+		verif = True
+		RES.append(verif)		 	
+	elif cont != 2 and num != 99:
+		verif = False
+		RES.append(verif)
+	cont = 0
+
+print(RES)			
+
+---------------------------------
+
+a = int(input())
+b = int(input())
+c = int(input())
+
+
+if c > a + b or b > a + c or a > b + c:
+	print(a,b,c)
+elif a == b and b == c:
+	print("EQUILATERO")
+elif a != b and b != c:
+	print("ESCALENO")
+elif a == b or a ==c or b ==c:
+	print("ISOSCELES")
+
+---------------------------------
+
+n = int(input())
+soma = 0
+while n != (-1):
+	soma += n
+	n = int(input())
+		
+	
+print("Soma Total:", soma)	
+
+---------------------------------
+
+n = 1
+flag = 0
+l = []
+
+while(n != flag):
+    n = int(input())
+    l.append(n)
+    
+tam = len(l)   
+tam -= 1
+while tam>= 0:
+    if l[tam] == flag:
+        l.remove(l[tam])
+        tam-=1
+    print("{}".format(l[tam]))
+    tam -= 1
+ 
+---------------------------------
+
+n = 0
+l = []
+r = []
+lRes = []
+while n != -1:
+		n = int(input())
+		if n != -1:
+			l.append(n)
+
+for i in range(len(l)):
+	for j in range(len(l)):
+		if l[i] == l[j]:
+			r.append(l[i])	
+			
+for i in range(len(r)):
+	for j in range(len(r)):
+		if i != j:
+			if (r[i] == r[j]) and (r[i] not in (lRes)):
+				lRes.append(r[i])
+	
+print(lRes)	
+
+---------------------------------
+
+def fat(n):
+	cont = 0
+	mult = 1
+	while cont != n:
+		cont += 1
+		mult *= cont
+	
+	return mult
+
+l = []
+for i in range(10):
+	n = int(input())
+	l.append(fat(n))
+	
+for x in l:
+	print(x)
+
+---------------------------------
+
+l = []
+orden = []
+n = int(input())
+
+for i in range(n):
+	num = int(input())
+	l.append(num)
+
+	
+while l:
+	menor = l[0]
+	for x in l:
+		if x < menor:
+			menor = x
+	orden.append(menor)
+	l.remove(menor)		
+
+maior = orden[-1]
+menor = orden[0]
+
+print(menor, maior)
+
+---------------------------------
+
+c = int(input())
+
+if c >= 0 and c <= 10:
+	P = c * 50.00 + 500.00
+	print(round(P,2))
+elif c > 10 and c <= 20:
+	P = c * 60.00 + 600.00
+	print(round(P,2))
+elif c > 20 and c <= 30:
+	P = c * 70.00 + 700.00
+	print(round(P,2))
+else:	
+	P = c * 80.00 + 800.00
+	print(round(P,2))
+
+---------------------------------
+
+c = int(input())
+
+if c >= 0 and c <= 10:
+	P = c * 50.00 + 500.00
+	print(round(P,2))
+elif c > 10 and c <= 20:
+	P = c * 60.00 + 600.00
+	print(round(P,2))
+elif c > 20 and c <= 30:
+	P = c * 70.00 + 700.00
+	print(round(P,2))
+else:	
+	P = c * 80.00 + 800.00
+	print(round(P,2))
+
+---------------------------------
+
+n = int(input())
+
+if n % 400 == 0 or n % 4 == 0 and n % 100 != 0:
+	print("EH BISSEXTO")
+else:
+	print("NAO EH BISSEXTO")
+
+---------------------------------
+
+n = int(input())
+
+if n % 400 == 0 or n % 4 == 0 and n % 100 != 0:
+	print("EH BISSEXTO")
+else:
+	print("NAO EH BISSEXTO")
+
+---------------------------------
+
+n = int(input())
+VET = []
+
+while n >= 0:
+	n = int(input())
+	if n >= 0:
+		VET.append(n)
+	
+num = int(input())
+quant = 0
+for x in VET:
+	if x != num:
+		quant += 1
+		
+print(quant)
+
+---------------------------------
+
+def isPrime(n):
+    cont = 0
+    for i in range(n):
+        i += 1
+        if n % i == 0:
+            cont += 1
+    if cont == 2:
+        return True		 	
+    elif cont != 2:
+        return False
+    cont = 0
+
+n = int(input())
+l = []
+for i in range(n+1):
+	if isPrime(i):
+         l.append(i)
+
+for x in l:
+    print(x)
+
+---------------------------------
+
+l = []
+maior = 0
+menor = 0
+orden = []
+
+for i in range(10):
+	n = float(input())
+	l.append(n)
+	i += 1
+	
+while l:
+	menor = l[0]
+	for x in l:
+		if x < menor:
+			menor = x
+	orden.append(menor)
+	l.remove(menor)		
+
+maior = orden[-1]
+menor = orden[0]
+
+print(maior)
+print(menor)
+
+---------------------------------
+
+def particao(l):
+	pivo = l[0]
+	menor = []
+	maior = []
+	for x in l:
+		if x < pivo:
+			menor.append(x)
+		if x > pivo:
+			maior.append(x)
+	saida = (menor,[pivo],maior)
+	print(tuple(saida))
+
+
+l = eval(input())
+particao(l)
+
+---------------------------------
+
+a = float(input())
+b = float(input())
+c = float(input())
+
+if a == 0:
+	print("Nao eh uma equacao do segundo grau.")	
+elif b != 0 and c != 0:
+	delta = ((b**2) - (4 * a * c))
+	if delta >= 0:
+		 x1 = ((-b) + (delta**(1/2)))/ (2 * a)
+		 x2 = ((-b) - (delta**(1/2)))/ (2 * a)
+		 print("x1=", x1)
+		 print("x2=", x2)
+	else: 
+		 print("A equacao nao possui raizes reais.")    
+
+---------------------------------
