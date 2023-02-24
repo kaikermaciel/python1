@@ -1,0 +1,191 @@
+num = int(input())
+mat = []
+for i in range(num):
+	l = []
+	for j in range(num):
+		n = int(input())
+		l.append(n)
+	mat.append(l)
+
+for i in range(len(mat)):
+	for j in range(len(mat)):
+		if i == j:
+			print(mat[i][j], end= " ")			
+===============================================
+num = int(input())
+mat = []
+for i in range(num):
+	l = []
+	for j in range(num):
+		n = int(input())
+		l.append(n)
+	mat.append(l)
+	
+for i in range(len(mat)):
+	for j in range(len(mat)):
+		if ((i + j) == (len(mat) - 1)):
+			print(mat[i][j], end= " ")			
+==========================================
+a = eval(input())
+b = eval(input())
+somat = []
+if len(a) == len(b):
+	for i in range(len(a)):
+		c = []
+		for j in range(len(a[0])):
+			soma = a[i][j] + b[i][j]
+			c.append(soma)
+		somat.append(c)	
+print(somat)			
+==========================================  
+a = eval(input())
+b = eval(input())
+somat = []
+if len(a) == len(b):
+	for i in range(len(a)):
+		c = []
+		for j in range(len(a)):
+			soma = a[i][j] * b[i][j]
+			c.append(soma)
+		somat.append(c)	
+print(somat)			
+============================================
+unidades = ["",'um', 'dois', 'tres','quatro', 'cinco','seis', 'sete', 'oito', 'nove']
+ddezenas = ["",'onze','doze', 'treze','catorze','quinze','dezesseis','dezessete','dezoito','dezenove']
+dezenas = ["",'dez','vinte','trinta','quarenta','cinquenta','sessenta','setenta','oitenta','noventa']
+centenas = ["",'cento','duzentos','trezentos','quatrocentos','quinhentos','seiscentos','setecentos','oitocentos','novecentos']
+
+
+num = int(input())
+flu = ''
+if num == 0:
+	flu = 'zero'	
+if num == 1000:
+	flu = 'mil'
+if num > 1000 and num < 2000:
+	flu += 'mil ' 
+if num >= 2000:
+		if num % 100 == 0:
+			flu = 'mil e '
+			num%=1000
+		else:
+			flu = unidades[num // 1000]+' mil '
+			num%= 1000
+if num == 100:
+	flu += 'cem'
+if num > 100:
+	flu += centenas[num // 100] + ' e '
+	num %= 100
+if num == 10:
+	flu = 'dez'
+if num >= 20:
+	flu += dezenas[num // 10] + ' e '
+	num %= 10
+if num > 10 and num < 20:
+	flu += ddezenas[num % 10]
+if num > 0 and num < 10:
+	flu += unidades[num]
+			 			
+print(flu)
+=======================================================
+a = eval(input())
+b = eval(input())
+somat = []
+for i in range(len(a)):
+	c = []
+	for j in range(len(b[0])):
+		soma = 0
+		for k in range(len(a[0])):
+			soma += a[i][k] * b[k][j]
+		c.append(soma)
+	somat.append(c)	
+print(somat)			
+===================================================
+mat = [[0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0]]
+for i in range(0,6):
+	if i < 5:
+		mat[i][i] = int(input())
+print(mat)		
+==================================================
+nf = eval(input())
+pres = eval(input())
+ch = int(input())
+contaprov = 0
+contreprovn = 0
+contreprovf = 0
+lf = []
+porc = ch * 0.75
+
+for i in range(len(nf)):
+	media = nf[i]
+	freq = pres[i] / ch
+	
+	if freq >= 0.75:
+		if media >= 5.0:
+			contaprov += 1
+		else:
+			contreprovn += 1
+	else:
+		contreprovf += 1
+		
+	
+lf.append(contaprov)
+lf.append(contreprovn)
+lf.append(contreprovf)
+
+print(lf)
+====================================================
+l = []
+
+for i in range(0,6):
+	mat = []
+	for j in range(0,5):
+		n = int(input())
+		mat.append(n)
+	l.append(mat)
+print(l)	
+=======================================================
+mat = [[0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0],
+		 [0,0,0,0,0]]
+for j in range(len(mat[0])):
+	for i in range(len(mat)):
+		mat[i][j] = int(input())
+print(mat)		
+=======================================================
+mat = eval(input())
+l = eval(input())
+mf = []
+
+for i in range(len(mat)):
+	flu =[]
+	for j in range(len(mat[0])):
+		mult = 0
+		for k in range(len(l)):
+			mult += mat[k][j] * l[k]
+		flu.append(mult)
+
+	
+print(flu)
+
+========================================================
+VetA = eval(input())
+VetB = eval(input())
+VetC = eval(input())
+VetD = []
+calcM = 0
+
+if len(VetA) == len(VetB) and len(VetA) == len(VetC):
+	for i in range(len(VetA)):
+		calcM = (VetB[i] + VetC[i]) / 2
+		VetD.append(calcM)
+		print("Aluno:", VetA[i], "- media:", round(VetD[i],2))
+===========================================================
